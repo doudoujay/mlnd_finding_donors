@@ -12976,14 +12976,14 @@ Random Forest: training several decision trees on different subsets of the data 
 Remarkable examples of Ensemble Learning success are the Netflix Challenge. This challenge aimed to build a new recommender system for Netflix to propose new movies for their users.<br>
 <em>Pros:</em><br> State-of-the art prediction is almost always made with an ensemble of algorithms nowadays. Much more accurate than single models. Decision trees can learn non-linear relationships, and are fairly robust to outliers. Ensembles perform very well in practice, winning many classical (i.e. non-deep-learning) machine learning competitions.<br>
 <em>Cons:</em><br> Require a lot of work and maintenance. Unconstrained, individual trees are prone to overfitting because they can keep branching until they memorize the training data. However, this can be alleviated by using ensembles.<br></p>
-<p>The weak learners from dicision tree will give us a better prediction by averaging to improve the predictive accuracy and control over-fitting.</p>
+<p>The weak learners from dicision tree will give us a better prediction by averaging to improve the predictive accuracy and control over-fitting. If we looked up our data, we are trying to predicting a category(&lt;=50 or &gt;50) with the labeled data, the data size is 633108 which is less than 100k, and the data is not text data, so we ends up with using ensemble classifiers.</p>
 <p><strong>Logistic Regression</strong><br>
 logistic regression moves with non-linear function hence can work with linearly and non-linearly separable problems.<br>
 <em>Real world application:</em> <br>
 Image Segmentation and Categorization, Handwriting recognition, Geographic Image Processing<br>
 <em>Pros:</em><br> straight forward, fast, well known. Outputs have a nice probabilistic interpretation, and the algorithm can be regularized to avoid overfitting. Logistic models can be updated easily with new data using stochastic gradient descent.<br>
 <em>Cons:</em><br> Strict Prerequisites assumption, bad with handling outliers. Logistic regression tends to underperform when there are multiple or non-linear decision boundaries. They are not flexible enough to naturally capture more complex relationships.<br></p>
-<p>From the understanding from our data, the logistic regression is a good choice because we have  good sample size and we are trying to predict a dichotomous outcomes.</p>
+<p>From the understanding from our data, the logistic regression is a good choice because we have good sample size(633108 which is less than 100k) and we are trying to predict a numerical outcome(quantity: 0 or 1). The logistic regression is very suitable for predicting numerical outcome.</p>
 <p><strong>ref:</strong><br>
 <a href="https://elitedatascience.com/machine-learning-algorithms">https://elitedatascience.com/machine-learning-algorithms</a><br>
 <a href="https://static.coggle.it/diagram/WHeBqDIrJRk-kDDY">https://static.coggle.it/diagram/WHeBqDIrJRk-kDDY</a><br>
@@ -13993,7 +13993,8 @@ It has the best overal performance(accuracy and f score in testing set). And, of
 <p><strong>Answer: </strong> <br>
 Dear CharityML Executive Board Members,<br>
 Our data science team has narrow down certain demographic criteria from the population of our data. And based on our analysis we decided to use a accurate enough model with rapid speed for our further development.<br>
-The model we are going to use for our data is called logistic regression, a member of the famous regression algorithms which has been heavily implemented in statstics and math. It's pretty easy understand if you taks college level entry statistic and linear algebra classes. Regression is a statistical process for estimating the relationships among variables. Regression analysis helps one understand how the typical value of the dependent variable changes when any one of the independent variables is varied, while the other independent variables are held fixed.<br>
+The model we are going to use for our data is called logistic regression. After our initial training using the training data, the logistic regression will assign each feature in our dataset a weight. When we are trying to predict the feature from our trained model, we take all the features and associated weight. We then make a sum up for all of the results. The final results are applied with a special logistic function.
+Logistic regression, a member of the famous regression algorithms which has been heavily implemented in statstics and math. It's pretty easy understand if you taks college level entry statistic and linear algebra classes. Regression is a statistical process for estimating the relationships among variables. Regression analysis helps one understand how the typical value of the dependent variable changes when any one of the independent variables is varied, while the other independent variables are held fixed.<br>
 This model is actually no magic, what the method does is a way of predicting a dichotomous outcome. The logistic regression will be fed with the data to make probabilty prediction which has outcome 0/1. The parameters were estimated, and then the model will give the predicting result from the trained model.<br>
 We seperate our data into training and testing for avoiding cheating(Yes, machine could cheat). The testing for our model based trained from our training data have a nice result regarding to our testing set. We feel this model is robust enough to identify from a group of people have income greater than 50,000.<br></p>
 <p>Best, Ji<br>
@@ -14575,7 +14576,7 @@ Wz9J2qxUjbt7IUmSpPuVK4CSJEmNMQBKkiQ1xgAoSZLUGAOgJElSYwyAkiRJjTEASpIkNcYAKEmS
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong><br>
 The feature I mentioned above covered most of the result from the feature<em>importances</em><br>
-The visualization suggest that the most important features are ranked from capital gain, capital loss ... to hours per week. And they added up to about 0.6 weight out of 1 of the all features.</p>
+The visualization suggest that the most important features are ranked from capital gain, capital loss ... to hours per week. And they added up to about 0.6 weight out of 1 of the all features. I missed the marital status and age. The reason why they should be important might be that the one who are married is more considerable to others and awaring the issues in the society, and they are making more money before their marriage. Also, the older the age, the more likelihood to have more money and income.</p>
 
 </div>
 </div>
